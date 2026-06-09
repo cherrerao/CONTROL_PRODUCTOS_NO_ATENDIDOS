@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos No Atendidos · DIRESA Callao</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- SHELL: topbar + sidebar + main-panel -->
+<div class="shell">
+
+  <!-- ══ SIDEBAR ══ -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">💊</div>
+      <div class="logo-text">
+        <div class="logo-title">DEMID</div>
+        <div class="logo-sub">DIRESA CALLAO</div>
+      </div>
+    </div>
+
+    <div class="sidebar-meta" id="sb-meta">Cargando…</div>
+
+    <div class="sidebar-nav">
+      <button class="nav-item active" onclick="switchTab('resumen')" data-tab="resumen">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">Resumen</span>
+      </button>
+      <button class="nav-item" onclick="switchTab('brecha')" data-tab="brecha">
+        <span class="nav-icon">📉</span>
+        <span class="nav-label">Brecha</span>
+      </button>
+      <button class="nav-item" onclick="switchTab('ici')" data-tab="ici">
+        <span class="nav-icon">🔬</span>
+        <span class="nav-label">Cruce ICI</span>
+      </button>
+      <button class="nav-item" onclick="switchTab('detalle')" data-tab="detalle">
+        <span class="nav-icon">📋</span>
+        <span class="nav-label">Detalle</span>
+      </button>
+      <button class="nav-item" onclick="switchTab('agrupado')" data-tab="agrupado">
+        <span class="nav-icon">🗂️</span>
+        <span class="nav-label">Agrupado</span>
+      </button>
+      <button class="nav-item" onclick="switchTab('nuevos')" data-tab="nuevos">
+        <span class="nav-icon">🆕</span>
+        <span class="nav-label">Por Producto</span>
+      </button>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="pill-live"><div class="live-dot"></div>EN VIVO</div>
+      <button class="btn-refresh" onclick="reloadData()" id="refresh-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0018.49 15"/></svg>
+        Actualizar
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MAIN PANEL ══ -->
+  <div class="main-panel">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="tab-title" id="tab-title">Resumen Ejecutivo</div>
+        <div class="topbar-meta" id="tb-meta">Cargando datos…</div>
+      </div>
+      <div class="topbar-right">
+        <div id="period-pills" class="period-pills"></div>
+      </div>
+    </div>
+
+    <!-- BANNER -->
+    <div id="global-banner"></div>
+
+    <!-- CONTENT AREA -->
+    <div class="content-area" id="dash-content">
+      <div class="loading-overlay">
+        <div class="loader"></div>
+        <div class="loading-text">Conectando con Google Sheets…</div>
+      </div>
+    </div>
+
+  </div><!-- /main-panel -->
+</div><!-- /shell -->
+
+<script src="script.js"></script>
+</body>
+</html>
