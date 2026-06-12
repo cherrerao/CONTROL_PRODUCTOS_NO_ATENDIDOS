@@ -1210,7 +1210,7 @@ function renderKPIs(data) {
     { icon:'📊', lbl:'Cobertura global',  val: cobertura.toFixed(1) + '%', sub:`${totalDisp.toLocaleString()} u atendidas`, c: cobertura<30?'c-red':cobertura<70?'c-orange':'c-green' },
     { icon:'🏥', lbl:'Establecimientos',  val: nEstabs, sub:`${nRedes} redes`, c:'c-blue' },
     { icon:'💊', lbl:'Productos afectados',val: nProds,  sub:'productos distintos', c:'c-blue' },
-    { icon:'🚨', lbl:'Sin cobertura (0%)',val: sin0,    sub:'registros sin atender nada', c:'c-red' },
+    //{ icon:'🚨', lbl:'Sin cobertura (0%)',val: sin0,    sub:'registros sin atender nada', c:'c-red' },
   ];
   document.getElementById('kpi-grid').innerHTML = kpis.map(k=>`
     <div class="kpi ${k.c}">
@@ -1808,7 +1808,7 @@ function renderNuevosKPIs(base) {
     { icon:'💊', lbl:'Productos únicos',            val: uniqProds, sub:'códigos distintos en vista', c:'c-violet' },
     { icon:'📦', lbl:'Unidades sin atender',        val: totalNoSat.toLocaleString('es-PE'), sub:'total acumulado', c:'c-red' },
     { icon:'📅', lbl:'Días con registros',           val: uniqDias, sub:'fechas distintas', c:'c-blue' },
-    { icon:'🗓️', lbl:'Meses involucrados',           val: uniqMeses, sub:'períodos distintos', c:'c-cyan' },
+   // { icon:'🗓️', lbl:'Meses involucrados',           val: uniqMeses, sub:'períodos distintos', c:'c-cyan' },
     { icon:'🏥', lbl:'Centros que reportan',         val: uniqCentros, sub:'establecimientos', c:'c-orange' },
   ];
   el.innerHTML = kpis.map(k => `<div class="kpi ${k.c}">
