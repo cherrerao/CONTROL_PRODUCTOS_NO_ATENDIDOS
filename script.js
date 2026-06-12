@@ -1241,10 +1241,10 @@ function renderICIKPIs() {
   const pctMatch   = cruce.length > 0 ? (conMatch.length/cruce.length*100).toFixed(0) : 0;
 
   const kpis = [
-    { icon:'🔴', lbl:'Críticos (ambos niveles)',   val: criticos.length, sub:'pedido urgente a SISMED', c:'c-red' },
+    /*{ icon:'🔴', lbl:'Críticos (ambos niveles)',   val: criticos.length, sub:'pedido urgente a SISMED', c:'c-red' },
     { icon:'🟠', lbl:'Alerta redistribución',       val: alertas.length,  sub:'stock en ALM, sin llegar a centros', c:'c-orange' },
     { icon:'🏪', lbl:'Desabastecido en Centros',    val: desabCE.length,  sub:'INDICADOR_CE = DESABASTECIDO', c:'c-red' },
-    { icon:'🏭', lbl:'Desabastecido en Almacén',    val: desabALM.length, sub:'INDICADOR_ALM = DESABASTECIDO', c:'c-orange' },
+    { icon:'🏭', lbl:'Desabastecido en Almacén',    val: desabALM.length, sub:'INDICADOR_ALM = DESABASTECIDO', c:'c-orange' },*/
     //{ icon:'🔗', lbl:'Match ICI encontrado',        val: `${conMatch.length} / ${cruce.length}`, sub:`${pctMatch}% productos cruzados`, c:'c-blue' },
   ];
   el.innerHTML = kpis.map(k=>`
