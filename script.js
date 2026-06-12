@@ -856,9 +856,11 @@ function renderAll() {
   const cobertura  = totalReq > 0 ? (totalDisp/totalReq*100) : 0;
   const periodo    = currentPeriod === 'todos' ? 'Todos los períodos' : (filteredData[0]?.mesNombre || currentPeriod);
   document.getElementById('tb-meta').textContent =
-    `${periodo} · ${filteredData.length.toLocaleString()} registros · ${totalNoSat.toLocaleString()} u sin atender · Cobertura: ${cobertura.toFixed(1)}%`;
+   //`${periodo} · ${filteredData.length.toLocaleString()} registros · ${totalNoSat.toLocaleString()} u sin atender · Cobertura: ${cobertura.toFixed(1)}%`;
+    `${periodo} · ${totalNoSat.toLocaleString()} u sin atender · Cobertura: ${cobertura.toFixed(1)}%`;
   const sbMeta = document.getElementById('sb-meta');
-  if (sbMeta) sbMeta.textContent = `${filteredData.length.toLocaleString()} registros · ${cobertura.toFixed(1)}% cobertura`;
+    //if (sbMeta) sbMeta.textContent = `${filteredData.length.toLocaleString()} registros · ${cobertura.toFixed(1)}% cobertura`;
+  if (sbMeta) sbMeta.textContent = `${cobertura.toFixed(1)}% cobertura`;
   renderBanner(cobertura, totalNoSat);
   document.getElementById('dash-content').innerHTML = buildDashHTML();
   switchTab(activeTab);
