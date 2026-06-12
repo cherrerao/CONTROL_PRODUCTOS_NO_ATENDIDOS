@@ -1245,7 +1245,7 @@ function renderICIKPIs() {
     { icon:'🟠', lbl:'Alerta redistribución',       val: alertas.length,  sub:'stock en ALM, sin llegar a centros', c:'c-orange' },
     { icon:'🏪', lbl:'Desabastecido en Centros',    val: desabCE.length,  sub:'INDICADOR_CE = DESABASTECIDO', c:'c-red' },
     { icon:'🏭', lbl:'Desabastecido en Almacén',    val: desabALM.length, sub:'INDICADOR_ALM = DESABASTECIDO', c:'c-orange' },
-    { icon:'🔗', lbl:'Match ICI encontrado',        val: `${conMatch.length} / ${cruce.length}`, sub:`${pctMatch}% productos cruzados`, c:'c-blue' },
+    //{ icon:'🔗', lbl:'Match ICI encontrado',        val: `${conMatch.length} / ${cruce.length}`, sub:`${pctMatch}% productos cruzados`, c:'c-blue' },
   ];
   el.innerHTML = kpis.map(k=>`
     <div class="kpi ${k.c}">
