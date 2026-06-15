@@ -331,6 +331,7 @@ function buildICIGrouped(cruceArr) {
         indicador_ce: r.indicador_ce,
         indicador_alm: r.indicador_alm,
         stock_ce: r.stock_ce,
+        cmpa_ce: r.cmpa_ce, 
         stock_alm: r.stock_alm,
         tiene_match: r.tiene_match,
         match_nombre: r.match_nombre,
@@ -1030,6 +1031,7 @@ function buildDashHTML() {
             <th onclick="sortICI('indicador_ce')">ICI Centros</th>
             <th onclick="sortICI('indicador_alm')">ICI Almacén</th>
             <th style="text-align:right">Stock CE</th>
+            <th style="text-align:right">CMPA CE</th>
             <th style="text-align:right">Stock ALM</th>
             <th onclick="sortICI('nivel')">Diagnóstico</th>
             <th>Match ICI</th>
@@ -1338,6 +1340,7 @@ function renderCruceTable() {
     <td>${indicBadge(r.indicador_ce)}</td>
     <td>${indicBadge(r.indicador_alm)}</td>
     <td class="mono" style="text-align:right;font-size:10px">${r.stock_ce !== null ? r.stock_ce.toLocaleString() : '—'}</td>
+    <td class="mono" style="text-align:right;font-size:10px">${r.cmpa_ce !== null ? r.cmpa_ce.toLocaleString() : '—'}</td>
     <td class="mono" style="text-align:right;font-size:10px">${r.stock_alm !== null ? r.stock_alm.toLocaleString() : '—'}</td>
     <td><span style="background:${r._diag.color}22;color:${r._diag.color};padding:2px 8px;border-radius:4px;font-size:10px;white-space:nowrap" title="${r._diag.desc}">${r._diag.label}</span></td>
     <td style="font-size:10px;color:var(--muted);max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
@@ -1433,7 +1436,7 @@ function renderRedChart(data) {
 function exportCruceCSV() { exportCruceXLSX(); }
 function exportCruceXLSX() {
   const cruce = iciGroupedData;
-  const heads = ['Fecha','Mes','Red','Establecimiento','COD PRE','COD SISMED','Producto','Sin Atender','Requerida','Disponible','Cobertura %','ICI Centros','ICI Almacén','Stock CE','Stock ALM','Diagnóstico','Match ICI'];
+  const heads = ['Fecha','Mes','Red','Establecimiento','COD PRE','COD SISMED','Producto','Sin Atender','Requerida','Disponible','Cobertura %','ICI Centros','ICI Almacén','Stock CE','CMPA CE','Stock ALM','Diagnóstico','Match ICI'];
   const dataRows = cruce.map(r => {
     const d = diagnosticarCruce(r);
     return [
@@ -1442,6 +1445,7 @@ function exportCruceXLSX() {
       r.requerida ? +(r.disponible/r.requerida*100).toFixed(1) : 0,
       r.indicador_ce, r.indicador_alm,
       r.stock_ce !== null ? r.stock_ce : '—',
+      r.cmpa_ce !== null ? r.cmpa_ce : '—',
       r.stock_alm !== null ? r.stock_alm : '—',
       d.label.replace(/[\u{1F534}\u{1F7E0}\u{1F7E1}\u{1F535}\u26AA]/gu,'').trim(),
       r.match_nombre||'—'
