@@ -5,7 +5,7 @@ const SHEET_ID      = '1wXQjHUAHEnfTde4xWJujv9xMQOmbGgzaI_27rRnUOQM';
 const SHEET_TAB     = 'ENTRADAS';
 
 // ⚠️ REEMPLAZA CON EL ID DEL SHEET DE DISPO_CENTROS_ALM
-const ICI_SHEET_ID  = '1rE4nNhbkASHX0DM38C-divKB3G84z42u';
+const ICI_SHEET_ID  = '1aaTsO9deIQ7-2dKoiHNzqdkkYZGvYDkN';
 const ICI_SHEET_TAB = 'DISP_CENTROS_ALM_SINC';
 
 // ═══════════════════════════════════════════════════════════════
