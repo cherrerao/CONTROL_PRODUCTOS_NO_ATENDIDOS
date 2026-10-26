@@ -1460,7 +1460,7 @@ function renderCruceTable() {
     <td>${indicBadge(r.indicador_alm)}</td>
     <td class="mono" style="text-align:right;font-size:10px">${r.stock_ce !== null ? r.stock_ce.toLocaleString() : '—'}</td>
     <td class="mono" style="text-align:right;font-size:10px">${r.cmpa_ce !== null ? r.cmpa_ce.toLocaleString() : '—'}</td>
-    <td class="mono" style="text-align:right;font-size:10px">${r.stock_alm !== null ? r.stock_alm.toLocaleString() : '—'}</td>
+    <td class="mono" style="text-align:right;font-size:10px">${r.stock_alm !== null ? r.stock_alm.toLocaleString('en-US') : '—'}</td>
     <td><span style="background:${r._diag.color}22;color:${r._diag.color};padding:2px 8px;border-radius:4px;font-size:10px;white-space:nowrap" title="${r._diag.desc}">${r._diag.label}</span></td>
     <td style="font-size:10px;color:var(--muted);max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
       ${r.tiene_match ? `<span title="${r.match_nombre||''}">${r.match_nombre?(r.match_nombre.length>30?r.match_nombre.slice(0,28)+'…':r.match_nombre):'—'}</span>` : '<span style="color:#78909c">⚪ Nuevo</span>'}
