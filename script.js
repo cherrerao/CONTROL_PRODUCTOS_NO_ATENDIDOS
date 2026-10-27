@@ -1455,7 +1455,7 @@ function renderCruceTable() {
     <td style="font-size:11px;max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.estab}</td>
     <td class="mono" style="font-size:10px">${r.cod_sismed||'-'}</td>
     <td style="font-size:11px;max-width:200px" title="${r.producto}">${r.producto.length>45?r.producto.slice(0,43)+'…':r.producto}</td>
-    <td class="mono" style="text-align:right">${r.noSat.toLocaleString()}</td>
+    <td class="mono" style="text-align:right">${r.noSat.toLocaleString('en-US')}</td>
     <td>${indicBadge(r.indicador_ce)}</td>
     <td>${indicBadge(r.indicador_alm)}</td>
     <td class="mono" style="text-align:right;font-size:10px">${r.stock_ce !== null ? r.stock_ce.toLocaleString('en-US') : '—'}</td>
